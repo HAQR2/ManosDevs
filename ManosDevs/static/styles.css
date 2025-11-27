@@ -1,0 +1,12 @@
+.titulos{
+    color: red ; 
+}
+
+.bordegrande{
+    border: solid blue 5px;
+}
+
+.borde{
+    border: solid 5px violet;
+    background-color: cadetblue;
+}
