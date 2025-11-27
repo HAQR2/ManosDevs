@@ -4,13 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="./static/styles.css">
     <title>ManosDevs</title>
 </head>
-<body>
-        <header>
-                <!-- Nahuel Navbar -->
-        </header>
+<body class="m-0 p-0">
+    <header class="w-full bg-black shadow-md">
+        <nav class="max-w-[1200px] mx-auto px-5 py-5 flex justify-between items-center ml-0">
+            <img src="./public/img/logo.png" alt="logoManos" class="w-[px] h-5">
+
+            <!-- Btn celular -->
+            <button class="md:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer" id="menuBtn">
+                <span class="w-[25px] h-[3px] bg-white"></span>
+                <span class="w-[25px] h-[3px] bg-white"></span>
+                <span class="w-[25px] h-[3px] bg-white"></span>
+            </button>
+
+            <ol class="hidden md:flex gap-10 list-none items-center" id="menu">
+                <li><a href="" class="no-underline font-extralight text-white hover:opacity-80">SERVICIOS</a></li>
+                <li><a href="" class="no-underline font-extralight text-white hover:opacity-80">PROYECTOS</a></li>
+                <li><a href="" class="no-underline font-extralight text-white hover:opacity-80">EXPERIENCIA</a></li>
+                <li><a href="" class="no-underline font-extralight text-white hover:opacity-80">NOSOTROS</a></li>
+                <li>
+                    <a href="" class="bg-[#DD0363] text-white px-[18px] py-[10px] font-semibold hover:bg-[#c00256] transition-colors">CONTACTAR</a>
+                </li>
+            </ol>
+        </nav>
+    </header>
+
+    <script>
+        const btn = document.getElementById("menuBtn");
+        const menu = document.getElementById("menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("flex");
+            menu.classList.toggle("hidden");
+            menu.classList.toggle("absolute");
+            menu.classList.toggle("top-[70px]");
+            menu.classList.toggle("left-0");
+            menu.classList.toggle("w-full");
+            menu.classList.toggle("bg-black");
+            menu.classList.toggle("flex-col");
+            menu.classList.toggle("gap-5");
+            menu.classList.toggle("py-5");
+            menu.classList.toggle("shadow-lg");
+        });
+    </script>
+
 <main>
     <!-- hero hector -->
 </main>
