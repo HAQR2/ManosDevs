@@ -30,7 +30,6 @@
             </ol>
         </nav>
     </header>
-
     <script>
         const btn = document.getElementById("menuBtn");
         const menu = document.getElementById("menu");
@@ -49,10 +48,251 @@
             menu.classList.toggle("shadow-lg");
         });
     </script>
+<!-- Hero Section -->
+    <section id="hero" class="min-h-screen relative overflow-hidden">
+        <!-- Slider Background -->
+        <div class="hero-slider absolute inset-0">
+            <div class="slide absolute inset-0 bg-cover bg-center animate-ken-burns opacity-100" 
+                 style="background-image: url('/ManosDevs/public/img/photo1.jpg');"></div>
+            <div class="slide absolute inset-0 bg-cover bg-center animate-ken-burns opacity-0" 
+                 style="background-image: url('/ManosDevs/public/img/photo2.jpg');"></div>
+            <div class="slide absolute inset-0 bg-cover bg-center animate-ken-burns opacity-0" 
+                 style="background-image: url('/ManosDevs/public/img/photo3.jpg');"></div>
+            <div class="slide absolute inset-0 bg-cover bg-center animate-ken-burns opacity-0" 
+                 style="background-image: url('/ManosDevs/public/img/photo4.jpg');"></div>
+        </div>
+        
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-bg/80 via-dark-bg/60 to-dark-bg"></div>
+        
+        <!-- Contenido Hero -->
+        <div class="relative container mx-auto px-4 h-screen flex items-center">
+            <div class="max-w-3xl">
+                <div class="ink-blot absolute -left-20 -top-20 w-64 h-64 opacity-30"></div>
+                
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-japon mb-6 animate-fade-in">
+                    <span class="bg-gradient-to-r from-neon-pink via-neon-green to-neon-orange bg-clip-text text-transparent">
+                        Donde el diseño y la innovación se fusionan en cada píxel
+                    </span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in animation-delay-200">
+                    Creamos experiencias digitales que transforman ideas en realidades interactivas. Combinamos estética japonesa y precisión técnica para impulsar tu presencia online.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 animate-fade-in animation-delay-400">
+                    <a href="#contacto" class="px-8 py-3 bg-gradient-neon text-dark-bg font-semibold rounded-full hover:shadow-lg hover:shadow-neon-pink/30 transition-all duration-300 text-center animate-pulse-neon">
+                        Contactar
+                    </a>
+                    <a href="#proyectos" class="px-8 py-3 border-2 border-neon-green text-neon-green font-semibold rounded-full hover:bg-neon-green hover:text-dark-bg transition-all duration-300 text-center">
+                        Ver Proyectos
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Texto Vertical Japonés - Lateral Izquierdo -->
+        <div class="hidden lg:block absolute left-8 top-1/2 transform -translate-y-1/2 z-10">
+            <div class="vertical-text text-2xl font-japon text-white/50 writing-mode-vertical">
+                デザイン<br>DESIGN
+            </div>
+        </div>
+        
+        <!-- Texto Vertical Japonés - Lateral Derecho -->
+        <div class="hidden lg:block absolute right-8 top-1/2 transform -translate-y-1/2 z-10">
+            <div class="vertical-text text-2xl font-japon text-white/50 writing-mode-vertical">
+                開発<br>DEVELOPMENT
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator - En el centro -->
+        <div id="scrollIndicator" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center gap-2">
+            <span class="text-[10px] uppercase tracking-widest text-gray-500 font-grotesk">Scroll</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-neon-pink to-transparent"></div>
+        </div>
+        
+        <!-- Partículas flotantes -->
+        <div id="particles" class="absolute inset-0 pointer-events-none"></div>
+    </section>
 
-<main>
-    <!-- hero hector -->
-</main>
-    <script type="module" src="./static/main.js"></script>
+    <!-- Servicios -->
+    <section id="servicios" class="py-20 bg-dark-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-japon text-center mb-4">
+                <span class="bg-gradient-to-r from-neon-pink to-neon-green bg-clip-text text-transparent">
+                    SERVICIOS
+                </span>
+            </h2>
+            <p class="text-xl text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+                Soluciones integrales adaptadas a las necesidades de tu proyecto.
+            </p>
+
+            <!-- Filtros de Servicios -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn active px-6 py-2 bg-neon-pink text-white rounded-full transition-all duration-300" data-filter="all">
+                    Todos
+                </button>
+                <button class="filter-btn px-6 py-2 bg-dark-card text-gray-300 hover:bg-neon-green/20 rounded-full transition-all duration-300" data-filter="design">
+                    Diseño
+                </button>
+                <button class="filter-btn px-6 py-2 bg-dark-card text-gray-300 hover:bg-neon-pink/20 rounded-full transition-all duration-300" data-filter="development">
+                    Desarrollo
+                </button>
+                <button class="filter-btn px-6 py-2 bg-dark-card text-gray-300 hover:bg-neon-orange/20 rounded-full transition-all duration-300" data-filter="branding">
+                    Branding
+                </button>
+            </div>
+
+            <!-- Cards de Servicios -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1: Diseño UX/UI -->
+                <div class="flip-card h-64" data-category="design">
+                    <div class="flip-card-inner relative w-full h-full">
+                        <!-- Frente -->
+                        <div class="flip-card-front bg-gradient-card rounded-2xl p-8 card-hover border border-white/10">
+                            <div class="text-4xl mb-4 bg-gradient-to-r from-neon-pink to-neon-green bg-clip-text text-transparent">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">DISEÑO UX/UI</h3>
+                            <p class="text-gray-400">Interfaces que enamoran y conversiones que impactan</p>
+                        </div>
+                        <!-- Reverso -->
+                        <div class="flip-card-back bg-gradient-card rounded-2xl p-8 border border-neon-pink/30">
+                            <h3 class="text-2xl font-bold mb-4">Tecnologías</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm">Figma</span>
+                                <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm">Adobe XD</span>
+                                <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm">Sketch</span>
+                            </div>
+                            <p class="text-gray-300">Creamos experiencias de usuario memorables y interfaces intuitivas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Desarrollo Front-End -->
+                <div class="flip-card h-64" data-category="development">
+                    <div class="flip-card-inner relative w-full h-full">
+                        <div class="flip-card-front bg-gradient-card rounded-2xl p-8 card-hover border border-white/10">
+                            <div class="text-4xl mb-4 bg-gradient-to-r from-neon-pink to-neon-green bg-clip-text text-transparent">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">DESARROLLO FRONT-END</h3>
+                            <p class="text-gray-400">Tecnología de vanguardia para experiencias fluidas</p>
+                        </div>
+                        <div class="flip-card-back bg-gradient-card rounded-2xl p-8 border border-neon-green/30">
+                            <h3 class="text-2xl font-bold mb-4">Tecnologías</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-neon-green/20 text-neon-green rounded-full text-sm">React</span>
+                                <span class="px-3 py-1 bg-neon-green/20 text-neon-green rounded-full text-sm">Vue.js</span>
+                                <span class="px-3 py-1 bg-neon-green/20 text-neon-green rounded-full text-sm">TypeScript</span>
+                            </div>
+                            <p class="text-gray-300">Desarrollamos interfaces modernas y optimizadas para máximo rendimiento.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Desarrollo Back-End -->
+                <div class="flip-card h-64" data-category="development">
+                    <div class="flip-card-inner relative w-full h-full">
+                        <div class="flip-card-front bg-gradient-card rounded-2xl p-8 card-hover border border-white/10">
+                            <div class="text-4xl mb-4 bg-gradient-to-r from-neon-pink to-neon-green bg-clip-text text-transparent">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">DESARROLLO BACK-END</h3>
+                            <p class="text-gray-400">Arquitecturas robustas y escalables</p>
+                        </div>
+                        <div class="flip-card-back bg-gradient-card rounded-2xl p-8 border border-neon-orange/30">
+                            <h3 class="text-2xl font-bold mb-4">Tecnologías</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-neon-orange/20 text-neon-orange rounded-full text-sm">Node.js</span>
+                                <span class="px-3 py-1 bg-neon-orange/20 text-neon-orange rounded-full text-sm">Python</span>
+                                <span class="px-3 py-1 bg-neon-orange/20 text-neon-orange rounded-full text-sm">AWS</span>
+                            </div>
+                            <p class="text-gray-300">Creamos soluciones backend seguras, rápidas y escalables.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Branding Digital -->
+                <div class="flip-card h-64" data-category="branding">
+                    <div class="flip-card-inner relative w-full h-full">
+                        <div class="flip-card-front bg-gradient-card rounded-2xl p-8 card-hover border border-white/10">
+                            <div class="text-4xl mb-4 bg-gradient-to-r from-neon-pink to-neon-green bg-clip-text text-transparent">
+                                <i class="fas fa-brush"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">BRANDING DIGITAL</h3>
+                            <p class="text-gray-400">Identidades que destacan y perduran</p>
+                        </div>
+                        <div class="flip-card-back bg-gradient-card rounded-2xl p-8 border border-neon-pink/30">
+                            <h3 class="text-2xl font-bold mb-4">Herramientas</h3>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm">Illustrator</span>
+                                <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm">Photoshop</span>
+                                <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm">After Effects</span>
+                            </div>
+                            <p class="text-gray-300">Desarrollamos identidades visuales coherentes y memorables.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Proyectos -->
+    <section id="proyectos" class="py-20 bg-dark-card">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
+                <div class="mb-8 md:mb-0">
+                    <h2 class="text-4xl md:text-5xl font-japon mb-4">
+                        <span class="bg-gradient-to-r from-neon-pink to-neon-green bg-clip-text text-transparent">
+                            PROYECTOS
+                        </span>
+                    </h2>
+                    <p class="text-xl text-gray-400 max-w-2xl">
+                        Una selección de nuestros trabajos más recientes y desafiantes.
+                    </p>
+                </div>
+                
+                <!-- Filtros de Proyectos -->
+                <div class="flex flex-wrap gap-3">
+                    <button class="filter-project-btn active px-6 py-2 bg-neon-pink text-white rounded-full transition-all duration-300" data-filter="all">
+                        Todos
+                    </button>
+                    <button class="filter-project-btn px-6 py-2 bg-dark-card text-gray-300 hover:bg-neon-green/20 rounded-full transition-all duration-300" data-filter="web">
+                        Web
+                    </button>
+                    <button class="filter-project-btn px-6 py-2 bg-dark-card text-gray-300 hover:bg-neon-pink/20 rounded-full transition-all duration-300" data-filter="mobile">
+                        Mobile
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid de Proyectos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Proyecto 1: App Inventario (Mobile) -->
+                <div class="project-card group relative overflow-hidden rounded-2xl cursor-pointer project-mobile" data-project="zen-travel">
+                    <div class="aspect-video bg-gradient-to-br from-neon-pink/20 to-neon-green/20 rounded-t-2xl flex items-center justify-center p-8">
+                        <div class="text-center">
+                            <div class="text-6xl mb-4">📱</div>
+                            <h3 class="text-2xl font-bold mb-2">ZEN TRAVEL</h3>
+                            <p class="text-gray-300">App Inventario</p>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-card p-6 rounded-b-2xl">
+                        <p class="text-gray-400">
+                            Aplicación de inventario, gestion de usuarios, etc..
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm">Mobile</span>
+                            <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm">UI/UX Design</span>
+                            <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm">React Native</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+    <!-- JavaScript -->
+    <script src="/ManosDevs/static/src/js/main.js"></script>
 </body>
 </html>
