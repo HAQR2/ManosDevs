@@ -1,5 +1,5 @@
 node_modules/
-public/css/styles.css
+static/styles.css
 .DS_Store
 .env
 *.log
