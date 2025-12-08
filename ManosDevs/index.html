@@ -2,14 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="./static/styles.css">
-    <title>ManosDevs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>MANOSDEVS - Agencia de Diseño y Desarrollo Digital</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    
+    <!-- CSS Personalizado -->
+    <link href="/ManosDevs/static/styles.css" rel="stylesheet">
+     <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/ManosDevs/public/img/favicon.ico">
 </head>
 <body class="m-0 p-0">
     <header class="w-full bg-black shadow-md">
-        <nav class="max-w-[1200px] mx-auto px-5 py-5 flex justify-between items-center ml-0">
+        <nav class="max-w-[160px] mx-auto px-5 py-5 flex justify-between items-center ml-0">
             <img src="./public/img/logo.png" alt="logoManos" class="w-[px] h-5">
 
             <!-- Btn celular -->
@@ -270,29 +283,24 @@
             <!-- Grid de Proyectos -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Proyecto 1: App Inventario (Mobile) -->
-                <div class="project-card group relative overflow-hidden rounded-2xl cursor-pointer project-mobile" data-project="zen-travel">
-                    <div class="aspect-video bg-gradient-to-br from-neon-pink/20 to-neon-green/20 rounded-t-2xl flex items-center justify-center p-8">
-                        <div class="text-center">
-                            <div class="text-6xl mb-4">📱</div>
-                            <h3 class="text-2xl font-bold mb-2">ZEN TRAVEL</h3>
-                            <p class="text-gray-300">App Inventario</p>
-                        </div>
-                    </div>
-                    <div class="bg-gradient-card p-6 rounded-b-2xl">
-                        <p class="text-gray-400">
-                            Aplicación de inventario, gestion de usuarios, etc..
-                        </p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm">Mobile</span>
-                            <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm">UI/UX Design</span>
-                            <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm">React Native</span>
+                <div class="project-card group relative overflow-hidden rounded-2xl h-96 cursor-pointer">
+                    <img src="/ManosDevs/public/img/photo1.jpg" 
+                         alt="Hero" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold mb-2">HERO</h3>
+                        <p class="text-gray-300 mb-4">Plataforma de fitness y bienestar con seguimiento personalizado</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-neon-green/20 text-neon-green rounded-full text-sm">Web App</span>
+                            <span class="px-3 py-1 bg-neon-green/20 text-neon-green rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-neon-green/20 text-neon-green rounded-full text-sm">Node.js</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Proyecto 2 -->
                 <div class="project-card group relative overflow-hidden rounded-2xl h-96 cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                    <img src="/ManosDevs/public/img/photo2.jpg" 
                          alt="Hero" 
                          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
@@ -339,12 +347,12 @@
                 <!-- Línea central -->
                 <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-neon-pink to-neon-green"></div>
 
-                <!-- Item 2021 -->
+                <!-- Item 2025 -->
                 <div class="timeline-item mb-12 relative">
                     <div class="flex flex-col lg:flex-row items-center">
                         <div class="lg:w-1/2 lg:pr-12 mb-6 lg:mb-0 lg:text-right">
                             <div class="inline-block px-4 py-2 bg-neon-pink/20 text-neon-pink rounded-full font-bold mb-2">
-                                2021
+                                2025
                             </div>
                             <h3 class="text-2xl font-bold mb-2">Fundación</h3>
                             <p class="text-gray-400">Nace MANOSDEVS en Buenos Aires con la visión de fusionar diseño y tecnología.</p>
@@ -355,15 +363,15 @@
                     </div>
                 </div>
 
-                <!-- Item 2022 -->
+                <!-- Item 2025 -->
                 <div class="timeline-item mb-12 relative">
                     <div class="flex flex-col lg:flex-row items-center">
                         <div class="lg:w-1/2 lg:pr-12 order-2">
                             <div class="inline-block px-4 py-2 bg-neon-green/20 text-neon-green rounded-full font-bold mb-2">
-                                2022
+                                2025
                             </div>
                             <h3 class="text-2xl font-bold mb-2">Expansión</h3>
-                            <p class="text-gray-400">Primeros clientes internacionales en USA y Europa. Establecimiento de procesos escalables.</p>
+                            <p class="text-gray-400">Primeros clientes internacionales en USA y Argentina. Establecimiento de procesos escalables.</p>
                         </div>
                         <div class="lg:w-1/2 lg:pl-12 mb-6 lg:mb-0 order-1">
                             <!-- Espacio para imagen o ícono -->
@@ -371,15 +379,15 @@
                     </div>
                 </div>
 
-                <!-- Item 2023 -->
+                <!-- Item 2026 -->
                 <div class="timeline-item mb-12 relative">
                     <div class="flex flex-col lg:flex-row items-center">
                         <div class="lg:w-1/2 lg:pr-12 mb-6 lg:mb-0 lg:text-right">
                             <div class="inline-block px-4 py-2 bg-neon-orange/20 text-neon-orange rounded-full font-bold mb-2">
-                                2023
+                                2026
                             </div>
-                            <h3 class="text-2xl font-bold mb-2">Reconocimiento</h3>
-                            <p class="text-gray-400">Premio a la mejor UI en los BA Web Awards. 40+ proyectos entregados satisfactoriamente.</p>
+                            <h3 class="text-2xl font-bold mb-2">Crecimiento</h3>
+                            <p class="text-gray-400">10+ proyectos entregados satisfactoriamente. Una empresa pequeña, con grandes proyectos</p>
                         </div>
                         <div class="lg:w-1/2 lg:pl-12">
                             <!-- Espacio para imagen o ícono -->
@@ -387,17 +395,17 @@
                     </div>
                 </div>
 
-                <!-- Item 2024 -->
-                <div class="timeline-item relative">
+                <!-- Item 2026 -->
+                <div class="timeline-item mb-12 relative">
                     <div class="flex flex-col lg:flex-row items-center">
-                        <div class="lg:w-1/2 lg:pr-12 order-2">
-                            <div class="inline-block px-4 py-2 bg-gradient-to-r from-neon-pink/20 to-neon-green/20 text-white rounded-full font-bold mb-2">
-                                2024
+                        <div class="lg:w-1/2 lg:pr-12 mb-6 lg:mb-0 lg:text-right">
+                            <div class="inline-block px-4 py-2 bg-neon-orange/20 text-neon-orange rounded-full font-bold mb-2">
+                                2026
                             </div>
-                            <h3 class="text-2xl font-bold mb-2">Innovación</h3>
-                            <p class="text-gray-400">Integración de IA en procesos de diseño. Expansión a 15+ países. 98% de clientes satisfechos.</p>
+                            <h3 class="text-2xl font-bold mb-2">Crecimiento</h3>
+                            <p class="text-gray-400">Integración de IA en procesos de diseño. Buscamos expandernos en America, 98% de clientes satisfechos.</p>
                         </div>
-                        <div class="lg:w-1/2 lg:pl-12 mb-6 lg:mb-0 order-1">
+                        <div class="lg:w-1/2 lg:pl-12">
                             <!-- Espacio para imagen o ícono -->
                         </div>
                     </div>
@@ -428,8 +436,8 @@
                                 CL
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold">Carlos Libera</h4>
-                                <p class="text-gray-400">CEO, Gol Tribunal</p>
+                                <h4 class="text-xl font-bold">Pablo Brunel</h4>
+                                <p class="text-gray-400">CEO, Aerolineas Argentinas</p>
                             </div>
                         </div>
                     </div>
@@ -438,15 +446,16 @@
                     <div class="bg-gradient-card rounded-2xl p-8 border border-neon-pink/20 transform hover:-translate-y-2 transition-all duration-300">
                         <div class="text-4xl text-neon-pink mb-4">"</div>
                         <p class="text-xl text-gray-300 italic mb-6">
-                            They captured our brand essence perfectly. The minimal aesthetic was exactly what we needed to stand out in a crowded market.
+                            Captaron perfectamente la esencia de nuestra marca. La estética minimalista era exactamente lo que necesitábamos para destacar en un mercado competitivo.
+.
                         </p>
                         <div class="flex items-center">
                             <div class="w-12 h-12 bg-gradient-to-r from-neon-green to-neon-orange rounded-full flex items-center justify-center text-dark-bg font-bold mr-4">
                                 SA
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold">Santa Asteles</h4>
-                                <p class="text-gray-400">Director, Museum of Fusionics</p>
+                                <h4 class="text-xl font-bold">Leandro Dos Santos</h4>
+                                <p class="text-gray-400">Director, Netflix Argentina</p>
                             </div>
                         </div>
                     </div>
