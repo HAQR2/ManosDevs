@@ -1,6 +1,109 @@
-/* style.css - Estilos personalizados para ManosDevs */
-
 /* Preloader personalizado */
+/* Estrellas animadas */
+.stars-container {
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle 4s infinite alternate ease-in-out;
+}
+
+.star.small {
+    width: 3px;
+    height: 3px;
+}
+
+.star.medium {
+    width: 2px;
+    height: 2px;
+}
+
+.star.large {
+    width: 3px;
+    height: 3px;
+}
+
+.star.neon-pink {
+    background-color: #FF006E;
+    box-shadow: 0 0 5px #FF006E, 0 0 10px #FF006E;
+}
+
+.star.neon-green {
+    background-color: #90EE90;
+    box-shadow: 0 0 5px #90EE90, 0 0 10px #90EE90;
+}
+
+.star.neon-orange {
+    background-color: #FF6B35;
+    box-shadow: 0 0 5px #FF6B35, 0 0 10px #FF6B35;
+}
+
+/* Animación de estrella fugaz */
+.shooting-star {
+    position: absolute;
+    opacity: 0;
+    animation: shooting-star 3s infinite;
+}
+
+.shooting-star:nth-child(2) {
+    animation-delay: 2s;
+}
+
+/* Animaciones para estrellas */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes star-float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(20px, -10px) rotate(90deg);
+    }
+    50% {
+        transform: translate(10px, 20px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-15px, 10px) rotate(270deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+@keyframes shooting-star {
+    0% {
+        transform: translateX(-100px) translateY(-100px) rotate(45deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100vw) translateY(100vh) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* Estrellas flotantes */
+.floating-star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: star-float 10s infinite linear;
+}
+
 .preloader-dots {
   display: flex;
   gap: 8px;
@@ -124,19 +227,6 @@
   }
 }
 
-/* Formulario avanzado */
-.form-step {
-  transition: all 0.3s ease;
-}
-
-.progress-step {
-  transition: all 0.3s ease;
-}
-
-.progress-step.active {
-  background: linear-gradient(90deg, #FF006E, #90EE90);
-}
-
 /* Botones con efecto neón */
 .btn-neon {
   position: relative;
@@ -221,6 +311,213 @@
   opacity: 1;
 }
 
+/* Scroll Indicator */
+#scrollIndicator {
+  transition: opacity 0.5s ease;
+}
+
+#scrollIndicator.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Estilos para filtros de proyectos */
+.filter-project-btn.active {
+  background: linear-gradient(90deg, #FF006E, #90EE90);
+  color: #0a0a0a;
+  font-weight: 600;
+}
+
+.filter-project-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-project-btn:hover:not(.active) {
+  transform: translateY(-2px);
+}
+
+/* Estilos para tarjetas de proyectos */
+.project-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(255, 0, 110, 0.1);
+  border-color: rgba(255, 0, 110, 0.2);
+}
+
+/* Estilos para el modal de proyecto */
+#projectModal {
+  backdrop-filter: blur(10px);
+}
+
+#projectModal .bg-gradient-card {
+  background: linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Animación para el modal */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+/* Estilos para el contenido del modal */
+.project-hero {
+  height: 300px;
+  background: linear-gradient(135deg, #FF006E, #90EE90, #FF6B35);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.project-tag {
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.project-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* Botón Live Site */
+.live-site-btn {
+  background: linear-gradient(90deg, #FF006E, #90EE90);
+  color: #0a0a0a;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.live-site-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 0, 110, 0.3);
+}
+
+/* Separador decorativo */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 0, 110, 0.5), transparent);
+  margin: 2rem 0;
+}
+
+/* ESTILOS ESPECÍFICOS PARA LA SECCIÓN NOSOTROS */
+.tech-stack-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-stack-btn:hover {
+  background-color: #FF006E !important;
+  color: #ffffff !important;
+  border-color: #FF006E !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 0, 110, 0.3);
+}
+
+.tech-stack-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.tech-stack-btn:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Efecto de imagen en blanco y negro con hover a color */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+}
+
+.image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(255, 0, 110, 0.2);
+}
+
+.image-container img {
+  filter: grayscale(100%);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-container:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Efecto de borde en hover */
+.image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.image-container:hover::before {
+  border-color: #FF006E;
+  border-width: 3px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .timeline-item::before {
@@ -233,6 +530,51 @@
   
   .flip-card:hover .flip-card-inner {
     transform: none;
+  }
+  
+  /* Ocultar el scroll indicator en móviles */
+  #scrollIndicator {
+    display: none;
+  }
+  
+  /* Ajustes para proyectos en móviles */
+  .project-hero {
+    height: 200px;
+  }
+  
+  .project-details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Ajustes para la sección Nosotros en móviles */
+  #nosotros .lg\\:flex-row {
+    flex-direction: column;
+  }
+  
+  #nosotros .lg\\:w-1\\/2 {
+    width: 100%;
+  }
+  
+  .tech-stack-btn {
+    width: calc(50% - 0.75rem) !important;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Ajustar estadísticas en móviles */
+  #nosotros .flex.items-center.gap-12 {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .tech-stack-btn {
+    width: 100% !important;
+  }
+  
+  .image-container {
+    margin-top: 2rem;
   }
 }
 
@@ -264,17 +606,22 @@ img {
   transform: translateY(-5px);
 }
 
-/* Mejorar el contraste para accesibilidad */
-@media (prefers-contrast: high) {
-  :root {
-    --neon-pink: #ff0066;
-    --neon-green: #00ff88;
-    --neon-orange: #ff5500;
-  }
-}
-
 /* Prevenir desbordamiento horizontal */
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+/* Efecto de pulso para elementos decorativos */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
 }
