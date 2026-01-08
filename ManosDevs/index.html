@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>MANOSDEVS - Agencia de Diseño y Desarrollo Digital</title>
-<!-- SEO Meta Tags -->
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Creamos experiencias digitales que transforman ideas en realidades interactivas. Combinamos estética japonesa y precisión técnica para impulsar tu presencia online.">
     <meta name="keywords" content="diseño web, desarrollo web, UX/UI, branding digital, Buenos Aires, agencia digital">
     <meta name="author" content="MANOSDEVS">
@@ -112,65 +112,113 @@
                         'gradient-neon': 'linear-gradient(90deg, #FF006E, #90EE90, #FF6B35)',
                         'gradient-dark': 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)',
                         'gradient-card': 'linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%)',
+                        'gradient-section': 'linear-gradient(180deg, var(--tw-gradient-from) 0%, var(--tw-gradient-via) 50%, var(--tw-gradient-to) 100%)',
                     },
                 },
             },
         }
     </script>
+    <style>
+        /* Estilos para el degradado continuo */
+        body {
+            background: linear-gradient(
+                to bottom,
+                #0a0a0a 0%,
+                #0c0c0c 10%,
+                #0f0f0f 20%,
+                #121212 30%,
+                #151515 40%,
+                #181818 50%,
+                #1a1a1a 60%,
+                #1c1c1c 70%,
+                #1e1e1e 80%,
+                #202020 90%,
+                #050505 100%
+            );
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        /* Degradado específico para cada sección */
+        .gradient-transition {
+            position: relative;
+        }
+        
+        .gradient-transition::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, rgba(10, 10, 10, 0.8));
+            z-index: 1;
+        }
+        
+        .gradient-transition::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, transparent, rgba(10, 10, 10, 0.8));
+            z-index: 1;
+        }
+    </style>
 </head>
-<body class="m-0 p-0">
-    <header class="w-full bg-black shadow-md">
-        <nav class="max-w-[160px] mx-auto px-5 py-5 flex justify-between items-center ml-0">
-            <img src="./public/img/logo.png" alt="logoManos" class="w-[px] h-5">
+<body class="m-0 p-0 text-white">
+    <!-- Navegación -->
+    <header class="w-full bg-black/90 backdrop-blur-sm shadow-lg fixed top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
+            <img src="./public/img/logo.png" alt="logoManos" class="w-32 h-auto">
 
-            <!-- Btn celular -->
-            <button class="md:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer" id="menuBtn">
-                <span class="w-[25px] h-[3px] bg-white"></span>
-                <span class="w-[25px] h-[3px] bg-white"></span>
-                <span class="w-[25px] h-[3px] bg-white"></span>
+            <!-- Botón móvil -->
+            <button class="md:hidden flex flex-col gap-1 bg-transparent border-none cursor-pointer z-50" id="menuBtn">
+                <span class="w-6 h-0.5 bg-white transition-all duration-300" id="bar1"></span>
+                <span class="w-6 h-0.5 bg-white transition-all duration-300" id="bar2"></span>
+                <span class="w-6 h-0.5 bg-white transition-all duration-300" id="bar3"></span>
             </button>
 
-            <ol class="hidden md:flex gap-10 list-none items-center" id="menu">
-                <li><a href="#servicios" class="no-underline font-extralight hover:opacity-80" style="color: #90EE90;">SERVICIOS</a></li>
-                <li><a href="#proyectos" class="no-underline font-extralight hover:opacity-80" style="color: #FF006E;">PROYECTOS</a></li>
-                <li><a href="#experiencia" class="no-underline font-extralight hover:opacity-80" style="color: #ffffff;">NUESTRA HISTORIA</a></li>
-                <li><a href="#testimonios" class="no-underline font-extralight hover:opacity-80" style="color: #ffffff;">TESTIMONIOS</a></li>
-                <li><a href="#nosotros" class="no-underline font-extralight hover:opacity-80" style="color: #ffffff;">NOSOTROS</a></li>
+            <!-- Menú de navegación -->
+            <ol class="hidden md:flex gap-8 list-none items-center" id="desktopMenu">
+                <li><a href="#servicios" class="no-underline font-medium hover:text-neon-green transition-colors duration-300" style="color: #90EE90;">SERVICIOS</a></li>
+                <li><a href="#proyectos" class="no-underline font-medium hover:text-neon-pink transition-colors duration-300" style="color: #FF006E;">PROYECTOS</a></li>
+                <li><a href="#experiencia" class="no-underline font-medium hover:text-neon-orange transition-colors duration-300" style="color: #ffffff;">NUESTRA HISTORIA</a></li>
+                <li><a href="#testimonios" class="no-underline font-medium hover:text-neon-green transition-colors duration-300" style="color: #ffffff;">TESTIMONIOS</a></li>
+                <li><a href="#nosotros" class="no-underline font-medium hover:text-neon-pink transition-colors duration-300" style="color: #ffffff;">NOSOTROS</a></li>
                 <li>
-                    <a href="#contacto" class="px-[18px] py-[10px] font-semibold hover:bg-[#c00256] transition-colors" style="background-color: #FF6B35; color: white;">CONTACTAR</a>
+                    <a href="#contacto" class="px-6 py-2 font-semibold hover:opacity-90 transition-all duration-300 rounded-full" style="background-color: #FF6B35; color: white;">CONTACTAR</a>
                 </li>
             </ol>
         </nav>
-    </header>
-    <script>
-        const btn = document.getElementById("menuBtn");
-        const menu = document.getElementById("menu");
 
-        btn.addEventListener("click", () => {
-            menu.classList.toggle("flex");
-            menu.classList.toggle("hidden");
-            menu.classList.toggle("absolute");
-            menu.classList.toggle("top-[70px]");
-            menu.classList.toggle("left-0");
-            menu.classList.toggle("w-full");
-            menu.classList.toggle("bg-black");
-            menu.classList.toggle("flex-col");
-            menu.classList.toggle("gap-5");
-            menu.classList.toggle("py-5");
-            menu.classList.toggle("shadow-lg");
-        });
-    </script>
-<!-- Hero Section -->
-    <section id="hero" class="min-h-screen relative overflow-hidden">        
+        <!-- Menú móvil -->
+        <div id="mobileMenu" class="fixed inset-0 bg-black/95 backdrop-blur-md z-40 hidden md:hidden transition-all duration-300">
+            <div class="flex flex-col items-center justify-center h-full">
+                <ol class="flex flex-col gap-8 list-none items-center text-center">
+                    <li><a href="#servicios" class="no-underline text-2xl font-medium hover:text-neon-green transition-colors duration-300" style="color: #90EE90;">SERVICIOS</a></li>
+                    <li><a href="#proyectos" class="no-underline text-2xl font-medium hover:text-neon-pink transition-colors duration-300" style="color: #FF006E;">PROYECTOS</a></li>
+                    <li><a href="#experiencia" class="no-underline text-2xl font-medium hover:text-neon-orange transition-colors duration-300" style="color: #ffffff;">NUESTRA HISTORIA</a></li>
+                    <li><a href="#testimonios" class="no-underline text-2xl font-medium hover:text-neon-green transition-colors duration-300" style="color: #ffffff;">TESTIMONIOS</a></li>
+                    <li><a href="#nosotros" class="no-underline text-2xl font-medium hover:text-neon-pink transition-colors duration-300" style="color: #ffffff;">NOSOTROS</a></li>
+                    <li>
+                        <a href="#contacto" class="px-8 py-3 text-xl font-semibold hover:opacity-90 transition-all duration-300 rounded-full mt-4" style="background-color: #FF6B35; color: white;">CONTACTAR</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen relative overflow-hidden pt-20 gradient-transition">
         <!-- Overlay con estrellas animadas -->
         <div class="absolute inset-0 overflow-hidden">
             <!-- Fondo gradiente -->
-            <div class="absolute inset-0 bg-gradient-to-b from-dark-bg/80 via-dark-bg/60 to-dark-bg"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/50"></div>
             
             <!-- Contenedor de estrellas -->
-            <div class="stars-container absolute inset-0">
-                <!-- Las estrellas se generarán dinámicamente con JavaScript -->
-            </div>
+            <div class="stars-container absolute inset-0"></div>
             
             <!-- Estrella fugaz -->
             <div class="shooting-star absolute top-1/4 left-1/4 w-2 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent transform rotate-45"></div>
@@ -217,7 +265,7 @@
             </div>
         </div>
         
-        <!-- Scroll Indicator - En el centro -->
+        <!-- Scroll Indicator -->
         <div id="scrollIndicator" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center gap-2">
             <span class="text-[10px] uppercase tracking-widest text-gray-500 font-grotesk">Scroll</span>
             <div class="w-[1px] h-12 bg-gradient-to-b from-neon-pink to-transparent"></div>
@@ -228,7 +276,7 @@
     </section>
 
     <!-- Servicios -->
-    <section id="servicios" class="py-20 bg-dark-bg">
+    <section id="servicios" class="py-20 gradient-transition">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl md:text-5xl font-japon text-center mb-4" style="color: #90EE90;">
                 SERVICIOS
@@ -242,13 +290,13 @@
                 <button class="filter-btn active px-6 py-2 bg-neon-pink text-white rounded-full transition-all duration-300" data-filter="all">
                     Todos
                 </button>
-                <button class="filter-btn px-6 py-2 bg-dark-card text-gray-300 hover:bg-neon-green/20 rounded-full transition-all duration-300" data-filter="design">
+                <button class="filter-btn px-6 py-2 bg-gray-800 text-gray-300 hover:bg-neon-green/20 rounded-full transition-all duration-300" data-filter="design">
                     Diseño
                 </button>
-                <button class="filter-btn px-6 py-2 bg-dark-card text-gray-300 hover:bg-neon-pink/20 rounded-full transition-all duration-300" data-filter="development">
+                <button class="filter-btn px-6 py-2 bg-gray-800 text-gray-300 hover:bg-neon-pink/20 rounded-full transition-all duration-300" data-filter="development">
                     Desarrollo
                 </button>
-                <button class="filter-btn px-6 py-2 bg-dark-card text-gray-300 hover:bg-neon-orange/20 rounded-full transition-all duration-300" data-filter="branding">
+                <button class="filter-btn px-6 py-2 bg-gray-800 text-gray-300 hover:bg-neon-orange/20 rounded-full transition-all duration-300" data-filter="branding">
                     Branding
                 </button>
             </div>
@@ -259,7 +307,7 @@
                 <div class="flip-card h-64" data-category="design">
                     <div class="flip-card-inner relative w-full h-full">
                         <!-- Frente -->
-                        <div class="flip-card-front bg-gradient-card rounded-2xl p-8 card-hover border border-white/10">
+                        <div class="flip-card-front bg-gray-900 rounded-2xl p-8 card-hover border border-white/10">
                             <div class="text-4xl mb-4 bg-gradient-to-r from-neon-pink to-neon-green bg-clip-text text-transparent">
                                 <i class="fas fa-palette"></i>
                             </div>
@@ -267,7 +315,7 @@
                             <p class="text-gray-400">Interfaces que enamoran y conversiones que impactan</p>
                         </div>
                         <!-- Reverso -->
-                        <div class="flip-card-back bg-gradient-card rounded-2xl p-8 border border-neon-pink/30">
+                        <div class="flip-card-back bg-gray-900 rounded-2xl p-8 border border-neon-pink/30">
                             <h3 class="text-2xl font-bold mb-4">Tecnologías</h3>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm">Figma</span>
@@ -282,14 +330,14 @@
                 <!-- Card 2: Desarrollo Front-End -->
                 <div class="flip-card h-64" data-category="development">
                     <div class="flip-card-inner relative w-full h-full">
-                        <div class="flip-card-front bg-gradient-card rounded-2xl p-8 card-hover border border-white/10">
+                        <div class="flip-card-front bg-gray-900 rounded-2xl p-8 card-hover border border-white/10">
                             <div class="text-4xl mb-4 bg-gradient-to-r from-neon-pink to-neon-green bg-clip-text text-transparent">
                                 <i class="fas fa-code"></i>
                             </div>
                             <h3 class="text-2xl font-bold mb-2">DESARROLLO FRONT-END</h3>
                             <p class="text-gray-400">Tecnología de vanguardia para experiencias fluidas</p>
                         </div>
-                        <div class="flip-card-back bg-gradient-card rounded-2xl p-8 border border-neon-green/30">
+                        <div class="flip-card-back bg-gray-900 rounded-2xl p-8 border border-neon-green/30">
                             <h3 class="text-2xl font-bold mb-4">Tecnologías</h3>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="px-3 py-1 bg-neon-green/20 text-neon-green rounded-full text-sm">React</span>
@@ -304,14 +352,14 @@
                 <!-- Card 3: Desarrollo Back-End -->
                 <div class="flip-card h-64" data-category="development">
                     <div class="flip-card-inner relative w-full h-full">
-                        <div class="flip-card-front bg-gradient-card rounded-2xl p-8 card-hover border border-white/10">
+                        <div class="flip-card-front bg-gray-900 rounded-2xl p-8 card-hover border border-white/10">
                             <div class="text-4xl mb-4 bg-gradient-to-r from-neon-pink to-neon-green bg-clip-text text-transparent">
                                 <i class="fas fa-server"></i>
                             </div>
                             <h3 class="text-2xl font-bold mb-2">DESARROLLO BACK-END</h3>
                             <p class="text-gray-400">Arquitecturas robustas y escalables</p>
                         </div>
-                        <div class="flip-card-back bg-gradient-card rounded-2xl p-8 border border-neon-orange/30">
+                        <div class="flip-card-back bg-gray-900 rounded-2xl p-8 border border-neon-orange/30">
                             <h3 class="text-2xl font-bold mb-4">Tecnologías</h3>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="px-3 py-1 bg-neon-orange/20 text-neon-orange rounded-full text-sm">Node.js</span>
@@ -326,14 +374,14 @@
                 <!-- Card 4: Branding Digital -->
                 <div class="flip-card h-64" data-category="branding">
                     <div class="flip-card-inner relative w-full h-full">
-                        <div class="flip-card-front bg-gradient-card rounded-2xl p-8 card-hover border border-white/10">
+                        <div class="flip-card-front bg-gray-900 rounded-2xl p-8 card-hover border border-white/10">
                             <div class="text-4xl mb-4 bg-gradient-to-r from-neon-pink to-neon-green bg-clip-text text-transparent">
                                 <i class="fas fa-brush"></i>
                             </div>
                             <h3 class="text-2xl font-bold mb-2">BRANDING DIGITAL</h3>
                             <p class="text-gray-400">Identidades que destacan y perduran</p>
                         </div>
-                        <div class="flip-card-back bg-gradient-card rounded-2xl p-8 border border-neon-pink/30">
+                        <div class="flip-card-back bg-gray-900 rounded-2xl p-8 border border-neon-pink/30">
                             <h3 class="text-2xl font-bold mb-4">Herramientas</h3>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm">Illustrator</span>
@@ -349,7 +397,7 @@
     </section>
 
     <!-- Proyectos -->
-    <section id="proyectos" class="py-20 bg-dark-card">
+    <section id="proyectos" class="py-20 gradient-transition">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
                 <div class="mb-8 md:mb-0">
@@ -366,10 +414,10 @@
                     <button class="filter-project-btn active px-6 py-2 bg-neon-pink text-white rounded-full transition-all duration-300" data-filter="all">
                         Todos
                     </button>
-                    <button class="filter-project-btn px-6 py-2 bg-dark-card text-gray-300 hover:bg-neon-green/20 rounded-full transition-all duration-300" data-filter="web">
+                    <button class="filter-project-btn px-6 py-2 bg-gray-800 text-gray-300 hover:bg-neon-green/20 rounded-full transition-all duration-300" data-filter="web">
                         Web
                     </button>
-                    <button class="filter-project-btn px-6 py-2 bg-dark-card text-gray-300 hover:bg-neon-pink/20 rounded-full transition-all duration-300" data-filter="mobile">
+                    <button class="filter-project-btn px-6 py-2 bg-gray-800 text-gray-300 hover:bg-neon-pink/20 rounded-full transition-all duration-300" data-filter="mobile">
                         Mobile
                     </button>
                 </div>
@@ -388,7 +436,7 @@
                             <p class="text-gray-300">Mobile App</p>
                         </div>
                     </div>
-                    <div class="bg-gradient-card p-6 rounded-b-2xl">
+                    <div class="bg-gray-900 p-6 rounded-b-2xl">
                         <p class="text-gray-400">
                             Aplicación de reservas de viaje minimalista inspirada en la estética japonesa.
                         </p>
@@ -411,7 +459,7 @@
                             <p class="text-gray-300">E-commerce Web</p>
                         </div>
                     </div>
-                    <div class="bg-gradient-card p-6 rounded-b-2xl">
+                    <div class="bg-gray-900 p-6 rounded-b-2xl">
                         <p class="text-gray-400">
                             E-commerce de moda de lujo con experiencia de compra premium y realidad aumentada.
                         </p>
@@ -434,7 +482,7 @@
                             <p class="text-gray-300">Portal Corporativo</p>
                         </div>
                     </div>
-                    <div class="bg-gradient-card p-6 rounded-b-2xl">
+                    <div class="bg-gray-900 p-6 rounded-b-2xl">
                         <p class="text-gray-400">
                             Portal corporativo para empresa tecnológica global con dashboard interactivo.
                         </p>
@@ -450,7 +498,7 @@
     </section>
 
     <!-- Experiencia -->
-    <section id="experiencia" class="py-20 bg-dark-bg">
+    <section id="experiencia" class="py-20 gradient-transition">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl md:text-5xl font-japon text-center mb-12" style="color: #ffffff;">
                 NUESTRA HISTORIA
@@ -529,7 +577,7 @@
     </section>
 
     <!-- Testimonios -->
-    <section id="testimonios" class="py-20 bg-dark-card">
+    <section id="testimonios" class="py-20 gradient-transition">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl md:text-5xl font-japon text-center mb-12" style="color: #ffffff;">
                 TESTIMONIOS
@@ -538,13 +586,13 @@
             <div class="testimonial-slider relative">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <!-- Testimonio 1 -->
-                    <div class="bg-gradient-card rounded-2xl p-8 border border-neon-green/20 transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="bg-gray-900 rounded-2xl p-8 border border-neon-green/20 transform hover:-translate-y-2 transition-all duration-300">
                         <div class="text-4xl text-neon-green mb-4">"</div>
                         <p class="text-xl text-gray-300 italic mb-6">
                             El equipo transformó completamente nuestra imagen digital. Su atención al detalle es obsesiva y los resultados superaron todas las expectativas.
                         </p>
                         <div class="flex items-center">
-                            <div class="w-12 h-12 bg-gradient-to-r from-neon-pink to-neon-green rounded-full flex items-center justify-center text-dark-bg font-bold mr-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-neon-pink to-neon-green rounded-full flex items-center justify-center text-black font-bold mr-4">
                                 PB
                             </div>
                             <div>
@@ -555,13 +603,13 @@
                     </div>
 
                     <!-- Testimonio 2 -->
-                    <div class="bg-gradient-card rounded-2xl p-8 border border-neon-pink/20 transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="bg-gray-900 rounded-2xl p-8 border border-neon-pink/20 transform hover:-translate-y-2 transition-all duration-300">
                         <div class="text-4xl text-neon-pink mb-4">"</div>
                         <p class="text-xl text-gray-300 italic mb-6">
                             Captaron perfectamente la esencia de nuestra marca. La estética minimalista era exactamente lo que necesitábamos para destacar en un mercado competitivo.
                         </p>
                         <div class="flex items-center">
-                            <div class="w-12 h-12 bg-gradient-to-r from-neon-green to-neon-orange rounded-full flex items-center justify-center text-dark-bg font-bold mr-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-neon-green to-neon-orange rounded-full flex items-center justify-center text-black font-bold mr-4">
                                 LS
                             </div>
                             <div>
@@ -575,8 +623,8 @@
         </div>
     </section>
 
-    <!-- Nosotros - Rediseñado según imágenes de referencia -->
-    <section id="nosotros" class="py-20 bg-dark-bg">
+    <!-- Nosotros -->
+    <section id="nosotros" class="py-20 gradient-transition">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl md:text-5xl font-japon text-center mb-12" style="color: #ffffff;">
                 NOSOTROS
@@ -617,32 +665,32 @@
                         
                         <!-- Primera fila de botones -->
                         <div class="flex flex-wrap gap-3 mb-3">
-                            <button class="tech-stack-btn px-6 py-3 bg-dark-card text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
+                            <button class="tech-stack-btn px-6 py-3 bg-gray-800 text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
                                 React
                             </button>
-                            <button class="tech-stack-btn px-6 py-3 bg-dark-card text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
+                            <button class="tech-stack-btn px-6 py-3 bg-gray-800 text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
                                 TypeScript
                             </button>
-                            <button class="tech-stack-btn px-6 py-3 bg-dark-card text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
+                            <button class="tech-stack-btn px-6 py-3 bg-gray-800 text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
                                 Node.js
                             </button>
-                            <button class="tech-stack-btn px-6 py-3 bg-dark-card text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
+                            <button class="tech-stack-btn px-6 py-3 bg-gray-800 text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
                                 Python
                             </button>
                         </div>
                         
                         <!-- Segunda fila de botones -->
                         <div class="flex flex-wrap gap-3">
-                            <button class="tech-stack-btn px-6 py-3 bg-dark-card text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
+                            <button class="tech-stack-btn px-6 py-3 bg-gray-800 text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
                                 AWS
                             </button>
-                            <button class="tech-stack-btn px-6 py-3 bg-dark-card text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
+                            <button class="tech-stack-btn px-6 py-3 bg-gray-800 text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
                                 Three.js
                             </button>
-                            <button class="tech-stack-btn px-6 py-3 bg-dark-card text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
+                            <button class="tech-stack-btn px-6 py-3 bg-gray-800 text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
                                 Figma
                             </button>
-                            <button class="tech-stack-btn px-6 py-3 bg-dark-card text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
+                            <button class="tech-stack-btn px-6 py-3 bg-gray-800 text-gray-300 rounded-lg border border-white/10 text-center text-sm font-medium transition-all duration-300 w-[calc(25%-0.75rem)] min-w-[120px]">
                                 Next.js
                             </button>
                         </div>
@@ -659,7 +707,7 @@
                         </div>
                         
                         <!-- Elemento decorativo -->
-                        <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-r from-neon-pink to-neon-green rounded-xl flex items-center justify-center text-dark-bg text-2xl opacity-80">
+                        <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-r from-neon-pink to-neon-green rounded-xl flex items-center justify-center text-black text-2xl opacity-80">
                             <i class="fas fa-code"></i>
                         </div>
                     </div>
@@ -669,7 +717,7 @@
     </section>
 
     <!-- Contacto -->
-    <section id="contacto" class="py-20 bg-gradient-dark">
+    <section id="contacto" class="py-20 gradient-transition">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl md:text-5xl font-japon text-center mb-4" style="color: #FF6B35;">
                 CONTACTAR
@@ -678,21 +726,21 @@
                 ¿Listo para transformar tu idea en realidad? Hablemos sobre tu proyecto.
             </p>
 
-            <div class="max-w-4xl mx-auto bg-dark-card rounded-2xl p-8 md:p-12">
+            <div class="max-w-4xl mx-auto bg-gray-900 rounded-2xl p-8 md:p-12">
                 <!-- Formulario -->
                 <form id="contactForm" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-gray-400 mb-2">Nombre</label>
                             <input type="text" 
-                                   class="w-full px-4 py-3 bg-dark-bg border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-neon-pink transition-colors"
+                                   class="w-full px-4 py-3 bg-gray-800 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-neon-pink transition-colors"
                                    placeholder="Tu nombre"
                                    required>
                         </div>
                         <div>
                             <label class="block text-gray-400 mb-2">Email</label>
                             <input type="email" 
-                                   class="w-full px-4 py-3 bg-dark-bg border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-neon-green transition-colors"
+                                   class="w-full px-4 py-3 bg-gray-800 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-neon-green transition-colors"
                                    placeholder="tu@email.com"
                                    required>
                         </div>
@@ -701,7 +749,7 @@
                     <div>
                         <label class="block text-gray-400 mb-2">Asunto</label>
                         <input type="text" 
-                               class="w-full px-4 py-3 bg-dark-bg border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-neon-orange transition-colors"
+                               class="w-full px-4 py-3 bg-gray-800 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-neon-orange transition-colors"
                                placeholder="¿En qué podemos ayudarte?"
                                required>
                     </div>
@@ -709,14 +757,14 @@
                     <div>
                         <label class="block text-gray-400 mb-2">Mensaje</label>
                         <textarea 
-                            class="w-full px-4 py-3 bg-dark-bg border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-neon-pink transition-colors h-40"
+                            class="w-full px-4 py-3 bg-gray-800 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-neon-pink transition-colors h-40"
                             placeholder="Cuéntanos sobre tu proyecto..."
                             required></textarea>
                     </div>
                     
                     <div class="text-center">
                         <button type="submit" 
-                                class="px-8 py-3 bg-gradient-neon text-dark-bg font-semibold rounded-full hover:shadow-lg hover:shadow-neon-pink/30 transition-all duration-300">
+                                class="px-8 py-3 bg-gradient-neon text-black font-semibold rounded-full hover:shadow-lg hover:shadow-neon-pink/30 transition-all duration-300">
                             Enviar Mensaje
                         </button>
                     </div>
@@ -728,12 +776,12 @@
                         <h3 class="text-2xl font-bold mb-2">¿Prefieres agendar una reunión?</h3>
                         <p class="text-gray-400">Selecciona un horario que te funcione</p>
                     </div>
-                    <div class="bg-dark-bg rounded-xl p-8 text-center">
+                    <div class="bg-gray-800 rounded-xl p-8 text-center">
                         <div class="text-4xl text-gray-500 mb-4">
                             <i class="fas fa-calendar-alt"></i>
                         </div>
                         <p class="text-gray-400 mb-4">Widget de Calendly integrado aquí</p>
-                        <button class="px-6 py-2 border-2 border-neon-green text-neon-green rounded-full hover:bg-neon-green hover:text-dark-bg transition-all duration-300">
+                        <button class="px-6 py-2 border-2 border-neon-green text-neon-green rounded-full hover:bg-neon-green hover:text-black transition-all duration-300">
                             Abrir Calendario
                         </button>
                     </div>
@@ -743,7 +791,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark-footer pt-20 pb-8 relative">
+    <footer class="bg-gradient-to-b from-gray-900 to-black pt-20 pb-8 relative">
         <!-- Patrón japonés -->
         <div class="japanese-pattern absolute inset-0 opacity-5"></div>
         
@@ -801,7 +849,7 @@
 
         <!-- Botón flotante -->
         <a href="#contacto" 
-           class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-r from-neon-pink to-neon-green rounded-full flex items-center justify-center text-dark-bg shadow-2xl hover:scale-110 transition-transform duration-300 z-40"
+           class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-r from-neon-pink to-neon-green rounded-full flex items-center justify-center text-black shadow-2xl hover:scale-110 transition-transform duration-300 z-40"
            title="¿Ideas? Hablemos">
             <i class="fas fa-comment text-xl"></i>
         </a>
@@ -809,7 +857,7 @@
 
     <!-- Modal para detalles del proyecto -->
     <div id="projectModal" class="fixed inset-0 bg-black/90 z-[100] hidden items-center justify-center p-4 transition-opacity duration-300">
-        <div class="bg-gradient-card rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative animate-fade-in">
+        <div class="bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative animate-fade-in">
             <button id="closeProjectModal" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl z-10">
                 <i class="fas fa-times"></i>
             </button>

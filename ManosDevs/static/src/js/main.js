@@ -1,5 +1,3 @@
-// script.js - Funcionalidad para ManosDevs
-
 // Preloader
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
@@ -10,7 +8,50 @@ window.addEventListener('load', () => {
         }, 500);
     }, 1500);
 });
-
+// Generador de estrellas para el overlay
+function createStars() {
+    const starsContainer = document.querySelector('.stars-container');
+    if (!starsContainer) return;
+    
+    // Crear 100 estrellas
+    for (let i = 0; i < 100; i++) {
+        const star = document.createElement('div');
+        
+        // Tamaño aleatorio
+        const sizes = ['small', 'medium', 'large'];
+        const size = sizes[Math.floor(Math.random() * sizes.length)];
+        
+        // Color aleatorio
+        const colors = ['', 'neon-pink', 'neon-green', 'neon-orange'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        
+        // Posición aleatoria
+        const top = Math.random() * 100;
+        const left = Math.random() * 100;
+        
+        // Duración y delay aleatorios
+        const duration = Math.random() * 3 + 2; // 2-5 segundos
+        const delay = Math.random() * 5; // 0-5 segundos
+        
+        // Configurar clases
+        star.classList.add('star', size);
+        if (color) star.classList.add(color);
+        
+        // Configurar posición y animación
+        star.style.top = `${top}%`;
+        star.style.left = `${left}%`;
+        star.style.animationDuration = `${duration}s`;
+        star.style.animationDelay = `${delay}s`;
+        
+        // Algunas estrellas tendrán movimiento adicional
+        if (Math.random() > 0.7) {
+            star.classList.add('floating-star');
+            star.style.animationDuration = `${Math.random() * 15 + 10}s`; // 10-25 segundos
+        }
+        
+        starsContainer.appendChild(star);
+    }
+}
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
@@ -367,8 +408,11 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observar elementos para animaciones
 document.addEventListener('DOMContentLoaded', () => {
-    // Crear partículas
+    // Create particles
     createParticles();
+    
+    // Crear estrellas
+    createStars();
     
     // Observar secciones para animaciones
     const sections = document.querySelectorAll('section');
